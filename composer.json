@@ -1,0 +1,62 @@
+{
+    "name": "nobelatunje/jwt",
+    "description": "JWT Package for Laravel and Lumen",
+    "type": "library",
+    "keywords": ["laravel", "lumen", "jwt", "nobelatunje", "lcobucci"],
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^8.0.2",
+        "guzzlehttp/guzzle": "^7.2",
+        "laravel/framework": "^9.19",
+        "laravel/tinker": "^2.7",
+        "lcobucci/jwt": "^4.2"
+    },
+    "require-dev": {
+        "barryvdh/laravel-ide-helper": "^2.12",
+        "fakerphp/faker": "^1.9.1",
+        "laravel/pint": "^1.0",
+        "mockery/mockery": "^1.4.4",
+        "nunomaduro/collision": "^6.1",
+        "nunomaduro/larastan": "^2.1",
+        "nunomaduro/phpinsights": "^2.4",
+        "orchestra/testbench": "^7.0",
+        "phpunit/phpunit": "^9.5",
+        "spatie/laravel-ignition": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Nobelatunje\\Jwt\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ademuyiwa Adetunji",
+            "email": "nobelatunje001@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Nobelatunje\\Jwt\\JWTServiceProvider"
+            ]
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Nobelatunje\\Jwt\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "repositories": {
+        "jwt": {
+            "type": "path",
+            "url": "src"
+        }
+    }
+}
