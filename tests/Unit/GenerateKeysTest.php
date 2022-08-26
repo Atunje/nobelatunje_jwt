@@ -5,7 +5,8 @@ namespace Nobelatunje\Jwt\Tests\Unit;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Artisan;
 use Nobelatunje\Jwt\Commands\GenerateKeys;
-use PHPUnit\Framework\TestCase;
+use Nobelatunje\Jwt\Commands\InstallPackage;
+use Nobelatunje\Jwt\Tests\TestCase;
 
 class GenerateKeysTest extends TestCase
 {
@@ -59,6 +60,8 @@ class GenerateKeysTest extends TestCase
 
         //now generate the keys again
         Artisan::call('jwt:generate');
+
+        $envFileContent = file_get_contents($this->envFilePath);
 
         //assert that old is not equal to new
         preg_match("#^ *{$sk_field} *= *[^\r\n]*$#uimU", $envFileContent, $matches);

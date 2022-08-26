@@ -46,8 +46,8 @@ class JWTServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__ . '/../config/nobelatunje_jwt.php' => config_path('nobelatunje_jwt.php'),
-            ]);
+                __DIR__ . '/config/jwtconfig.php' => config_path('jwtconfig.php'),
+            ], 'config');
 
             $this->commands([
                 InstallPackage::class,
@@ -63,7 +63,7 @@ class JWTServiceProvider extends ServiceProvider
      */
     protected function policies(): array
     {
-        return $this->policies = config('nobelatunje_jwt.policies');
+        return $this->policies = config('nobelatunje_jwt.policies') ?? [];
     }
 
     /**

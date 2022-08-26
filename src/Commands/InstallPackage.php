@@ -11,13 +11,15 @@ class InstallPackage extends Command
 
     protected $description = 'InstallPackage the Nobelatunje/Jwt Package';
 
+    const CONFIG_FILE = "jwtconfig.php";
+
     public function handle()
     {
         $this->info('Installing package...');
 
         $this->info('Publishing configuration...');
 
-        if (! $this->configExists('nobelatunje_jwt.php')) {
+        if (! $this->configExists(self::CONFIG_FILE)) {
             $this->publishConfiguration();
             $this->info('Published configuration');
         } else {
@@ -48,7 +50,8 @@ class InstallPackage extends Command
     private function publishConfiguration($forcePublish = false)
     {
         $params = [
-            '--provider' => "Nobelatunje\Jwt\JWTServiceProvider"
+            '--provider' => "Nobelatunje\Jwt\JWTServiceProvider",
+            '--tag' => 'config'
         ];
 
         if ($forcePublish === true) {

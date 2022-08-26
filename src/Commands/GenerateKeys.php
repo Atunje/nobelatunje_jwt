@@ -4,6 +4,7 @@ namespace Nobelatunje\Jwt\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 
 class GenerateKeys extends Command
@@ -18,6 +19,11 @@ class GenerateKeys extends Command
         parent::__construct();
 
         $this->envFilePath = App::environmentFilePath();
+
+        if (! File::exists($this->envFilePath)) {
+            //create the env file
+            File::put($this->envFilePath, "");
+        }
     }
 
     /**
