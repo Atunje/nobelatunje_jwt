@@ -1,7 +1,5 @@
 # Nobelatunje/Jwt
 
-> ### Jwt Library for Laravel and Lumen.
-
 A simple JSON Web Token Authentication Library built on top of **[lcobucci/jwt](https://github.com/lcobucci/jwt)** for Laravel and Lumen. 
 
 It uses Asymmetric Algorithm using a **private key** for signature creation and a **public key** for verification. This means that it's fine to distribute your **public key**. However, the **private key** should **remain secret**.
