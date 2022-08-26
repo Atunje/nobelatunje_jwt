@@ -23,13 +23,23 @@ Modify the jwtconfig.php in your config file as necessary and add your app's Pol
 Change the route driver in your auth.php config file to jwt.
 
     'guards' => [
-        'api' => [
+        'custom_guard' => [
             'driver' => 'jwt',
             'provider' => 'users',
         ],
     ],
 
 ## Auth Guard Usage
+
+### Routing
+    Route::middleware('auth:custom_guard')->get('/user', function (Request $request) {
+        return $request->user();
+    });
+
+    //if you set jwt as driver for your api guard
+    Route::middleware('auth:api')->get('/user', function (Request $request) {
+        return $request->user();
+    });
 
 ### Login
 
@@ -41,4 +51,9 @@ Change the route driver in your auth.php config file to jwt.
     // Get the currently authenticated user
     $user = Auth::user();
 
+
+### Routing
+    Route::middleware('auth:custom_guard')->get('/user', function (Request $request) {
+        return $request->user();
+    });
 
