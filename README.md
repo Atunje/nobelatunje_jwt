@@ -50,10 +50,3 @@ Change the route driver in your auth.php config file to jwt.
     
     // Get the currently authenticated user
     $user = Auth::user();
-
-
-### Routing
-    Route::middleware('auth:custom_guard')->get('/user', function (Request $request) {
-        return $request->user();
-    });
-
