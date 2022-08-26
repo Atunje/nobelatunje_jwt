@@ -10,6 +10,8 @@ use Nobelatunje\Jwt\Tests\TestCase;
 
 class InstallPackageTest extends TestCase
 {
+    private string $config_file;
+
     public function setUp(): void
     {
         parent::setUp();

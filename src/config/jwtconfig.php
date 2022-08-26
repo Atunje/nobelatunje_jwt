@@ -32,5 +32,5 @@ return [
      */
     "policies" => [
         // 'App\Models\Model' => 'App\Policies\ModelPolicy',
-    ]
+    ],
 ];

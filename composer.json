@@ -14,14 +14,12 @@
         "lcobucci/jwt": "^4.2"
     },
     "require-dev": {
-        "barryvdh/laravel-ide-helper": "^2.12",
         "fakerphp/faker": "^1.9.1",
         "laravel/pint": "^1.0",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^6.1",
-        "nunomaduro/larastan": "^2.1",
-        "nunomaduro/phpinsights": "^2.4",
         "orchestra/testbench": "^7.0",
+        "phpstan/phpstan": "^1.8",
         "phpunit/phpunit": "^9.5",
         "spatie/laravel-ignition": "^1.0"
     },
