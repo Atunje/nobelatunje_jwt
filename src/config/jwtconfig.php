@@ -25,7 +25,7 @@ return [
     /**
      * Token Issuer
      */
-    "issuer" => env("APP_URL"),
+    "issuer" => strval( env("APP_URL", "http://localhost") ),
 
     /**
      * Policies

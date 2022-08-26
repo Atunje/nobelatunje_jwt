@@ -58,9 +58,9 @@ class TokenFactory
 
         $this->public_key = config(Config::CONFIG_FILE . '.public_key');
 
-        $this->issuer = config(Config::CONFIG_FILE . '.jwtconfig.issuer');
+        $this->issuer = config(Config::CONFIG_FILE . '.issuer');
 
-        $this->expires_in = config(Config::CONFIG_FILE . '.jwtconfig.token_life');
+        $this->expires_in = config(Config::CONFIG_FILE . '.token_life');
 
         $this->configure();
     }
