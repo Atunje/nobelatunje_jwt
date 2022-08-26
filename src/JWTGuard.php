@@ -112,7 +112,7 @@ class JWTGuard implements Guard
 
         if ($user !== null && $this->provider->validateCredentials($user, $credentials)) {
             //generate a new access token
-            $id_field = config('nobelatunje_jwt.user_id_field');
+            $id_field = config(Config::CONFIG_FILE . '.user_id_field');
             return $this->tokenFactory->issueToken($user->$id_field);
         }
 

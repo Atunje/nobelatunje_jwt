@@ -4,6 +4,7 @@ namespace Nobelatunje\Jwt\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
+use Nobelatunje\Jwt\Config;
 
 class InstallPackage extends Command
 {
@@ -11,15 +12,13 @@ class InstallPackage extends Command
 
     protected $description = 'InstallPackage the Nobelatunje/Jwt Package';
 
-    const CONFIG_FILE = "jwtconfig.php";
-
     public function handle()
     {
         $this->info('Installing package...');
 
         $this->info('Publishing configuration...');
 
-        if (! $this->configExists(self::CONFIG_FILE)) {
+        if (! $this->configExists()) {
             $this->publishConfiguration();
             $this->info('Published configuration');
         } else {
@@ -34,9 +33,9 @@ class InstallPackage extends Command
         $this->info('Installed Nobelatunje/Jwt');
     }
 
-    private function configExists($fileName): bool
+    private function configExists(): bool
     {
-        return File::exists(config_path($fileName));
+        return File::exists(config_path(Config::CONFIG_FILE . ".php"));
     }
 
     private function shouldOverwriteConfig(): bool

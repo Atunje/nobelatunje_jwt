@@ -5,7 +5,6 @@ namespace Nobelatunje\Jwt\Tests\Unit;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Artisan;
 use Nobelatunje\Jwt\Commands\GenerateKeys;
-use Nobelatunje\Jwt\Commands\InstallPackage;
 use Nobelatunje\Jwt\Tests\TestCase;
 
 class GenerateKeysTest extends TestCase

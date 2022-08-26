@@ -2,11 +2,10 @@
 
 namespace Nobelatunje\Jwt\Tests\Unit;
 
-use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Artisan;
-use Illuminate\Support\Facades\File;
-use Nobelatunje\Jwt\Commands\InstallPackage;
+use Nobelatunje\Jwt\Config;
 use Nobelatunje\Jwt\Tests\TestCase;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Artisan;
 
 class InstallPackageTest extends TestCase
 {
@@ -16,7 +15,7 @@ class InstallPackageTest extends TestCase
     {
         parent::setUp();
 
-        $this->config_file = InstallPackage::CONFIG_FILE;
+        $this->config_file = Config::CONFIG_FILE . ".php";
     }
 
     /** @test */

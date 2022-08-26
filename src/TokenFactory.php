@@ -5,8 +5,8 @@ namespace Nobelatunje\Jwt;
 use Exception;
 use Lcobucci\JWT\Signer;
 use Illuminate\Support\Str;
-use Lcobucci\Clock\SystemClock;
 use Lcobucci\JWT\Configuration;
+use Lcobucci\Clock\SystemClock;
 use Lcobucci\JWT\UnencryptedToken;
 use Lcobucci\JWT\Signer\Key\InMemory;
 use Lcobucci\JWT\Validation\Constraint\IssuedBy;
@@ -54,13 +54,13 @@ class TokenFactory
      */
     public function __construct()
     {
-        $this->private_key = config('nobelatunje_jwt.private_key');
+        $this->private_key = config(Config::CONFIG_FILE . '.private_key');
 
-        $this->public_key = config('nobelatunje_jwt.public_key');
+        $this->public_key = config(Config::CONFIG_FILE . '.public_key');
 
-        $this->issuer = config('nobelatunje_jwt.issuer');
+        $this->issuer = config(Config::CONFIG_FILE . '.jwtconfig.issuer');
 
-        $this->expires_in = config('nobelatunje_jwt.token_life');
+        $this->expires_in = config(Config::CONFIG_FILE . '.jwtconfig.token_life');
 
         $this->configure();
     }
